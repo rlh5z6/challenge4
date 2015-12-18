@@ -1,0 +1,31 @@
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+#toolbar {
+    background-color: #1F274B;
+    margin-bottom: 20px;
+}
+
+#toolbar > h2 {
+    color: white;
+    margin: 20px;
+}
+
+.todo_list {
+    margin: 20px;
+}
+
+md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;
+}

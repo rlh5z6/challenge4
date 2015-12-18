@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <title>ToDo List</title>
+    <!-- AngularJS Dependency -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+
+    <!-- Angular Material Dependency -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+
+
+  </head>
+  <body>
+      <md-toolbar id="toolbar" md-scroll-y class="md-whiteframe-z4" layout="row">
+        <h2>ToDo List</h2>
+      </md-toolbar>
+    <div class="todo_list" ng-controller="TodoListController as todoList">
+      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="todoList.addTodo()">
+          <input type="text" ng-model="todoList.todoText">
+          <input class="btn-primary" type="submit" value="Add">
+          <input class="btn-primary" type="button" ng-click="todoList.archive()" value="Clear Completed">
+      </form>
+    </div>
+  </body>
+</html>
